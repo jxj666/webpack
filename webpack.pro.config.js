@@ -3,12 +3,14 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-17 20:14:13
- * @LastEditTime: 2019-07-18 15:13:57
+ * @LastEditTime: 2019-07-18 15:20:29
  * @LastEditors: 靳肖健
  */
 var webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 
 
 
@@ -63,6 +65,12 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['build/*.*'],
+      root: __dirname,
+      verbose: true,
+      dry: false
+    }),
     new webpack.BannerPlugin('jxjweb学习'),
     new HtmlWebpackPlugin({
       template: __dirname + "/app/index.tmpl.html"//new 一个这个插件的实例，并传入相关的参数
