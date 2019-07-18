@@ -3,9 +3,10 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-17 20:14:13
- * @LastEditTime: 2019-07-18 11:26:30
+ * @LastEditTime: 2019-07-18 11:39:29
  * @LastEditors: 靳肖健
  */
+var webpack = require('webpack');
 module.exports = {
   // devtool: 'source-map',
   devtool: 'cheap-module-eval-source-map',
@@ -50,5 +51,8 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.BannerPlugin('jxjweb学习')
+  ],
 }
