@@ -3,10 +3,12 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-17 20:14:13
- * @LastEditTime: 2019-07-18 11:39:29
+ * @LastEditTime: 2019-07-18 11:45:03
  * @LastEditors: 靳肖健
  */
 var webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   // devtool: 'source-map',
   devtool: 'cheap-module-eval-source-map',
@@ -53,6 +55,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.BannerPlugin('jxjweb学习')
+    new webpack.BannerPlugin('jxjweb学习'),
+    new HtmlWebpackPlugin({
+      template: __dirname + "/app/index.tmpl.html"//new 一个这个插件的实例，并传入相关的参数
+    })
   ],
 }
