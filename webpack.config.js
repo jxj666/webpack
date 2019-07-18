@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-17 20:14:13
- * @LastEditTime: 2019-07-18 11:17:11
+ * @LastEditTime: 2019-07-18 11:26:30
  * @LastEditors: 靳肖健
  */
 module.exports = {
@@ -44,6 +44,8 @@ module.exports = {
                 hashPrefix: 'my-custom-hash',
               },
             }
+          }, {
+            loader: "postcss-loader"
           }
         ]
       }
