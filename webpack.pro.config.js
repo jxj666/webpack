@@ -3,7 +3,7 @@
  * @Author: jinxiaojian
  * @Email: jinxiaojian@youxin.com
  * @Date: 2019-07-17 20:14:13
- * @LastEditTime: 2019-07-18 15:20:29
+ * @LastEditTime: 2019-07-18 15:25:09
  * @LastEditors: 靳肖健
  */
 var webpack = require('webpack');
@@ -18,11 +18,6 @@ module.exports = {
   mode: 'production',
   devtool: 'cheap-module-eval-source-map',
   entry: __dirname + "/app/main.js",//已多次提及的唯一入口文件
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
-  },
   output: {
     path: __dirname + "/dist",//打包后的文件存放的地方
     filename: "bundle_[hash].js"//打包后输出文件的文件名
@@ -66,8 +61,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['build/*.*'],
-      root: __dirname,
+      root: __dirname + '/dist',
       verbose: true,
       dry: false
     }),
