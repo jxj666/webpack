@@ -15,7 +15,7 @@ class Greeter extends Component {
   render () {
     return (
       <div className={styles.root}>
-        <h1>webpack</h1>
+        <h1>webpackg</h1>
         {config.greetText}
       </div>
     );
